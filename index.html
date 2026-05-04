@@ -4,18 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Agora Communication</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <title>Agora Communication — Agence de Communication & Stratégie</title>
+  <meta name="description" content="Agora Communication, agence créative spécialisée en stratégie de marque, création de contenu et communication digitale.">
+  <meta name="keywords" content="agence communication, stratégie de marque, branding, création contenu, communication digitale, relations presse">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,24 +23,179 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: BizLand
-  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    /* ===== AGORA — Design tokens ===== */
+    :root {
+      --agora-noir: #0d0d0d;
+      --agora-blanc: #f7f4ef;
+      --agora-creme: #ede8df;
+      --agora-or: #c9a84c;
+      --agora-or-clair: #e8d5a3;
+      --agora-gris: #6b6560;
+      --agora-gris-clair: #d4cfc8;
+      --agora-accent: #8b2e2e;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-ui: 'Montserrat', sans-serif;
+    }
+
+    body { font-family: var(--font-body); background: var(--agora-blanc); color: var(--agora-noir); overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: var(--font-display); }
+
+    /* TOPBAR */
+    .topbar { background: var(--agora-noir) !important; padding: 8px 0; }
+    .topbar .contact-info a, .topbar .contact-info span { color: var(--agora-gris-clair) !important; font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.06em; text-decoration: none; }
+    .topbar .contact-info a:hover { color: var(--agora-or) !important; }
+    .topbar .social-links a { color: var(--agora-gris-clair) !important; transition: color 0.3s; font-size: 14px; }
+    .topbar .social-links a:hover { color: var(--agora-or) !important; }
+
+    /* HEADER */
+    .header { background: var(--agora-blanc) !important; border-bottom: 1px solid var(--agora-gris-clair); }
+    .header .branding { padding: 14px 0; }
+    .sitename { font-family: var(--font-display); font-size: 26px; font-weight: 900; color: var(--agora-noir) !important; letter-spacing: -0.02em; }
+    .sitename span { color: var(--agora-or); }
+    .navmenu ul li a { font-family: var(--font-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--agora-noir) !important; padding: 6px 14px; transition: color 0.3s; }
+    .navmenu ul li a:hover, .navmenu ul li a.active { color: var(--agora-or) !important; }
+
+    /* HERO */
+    .hero { background: var(--agora-noir) !important; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 55%; height: 120%; background: radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 70%); pointer-events: none; }
+    .hero::after { content: 'AGORA'; position: absolute; bottom: -5%; right: -2%; font-family: var(--font-display); font-size: clamp(100px, 18vw, 260px); font-weight: 900; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; user-select: none; letter-spacing: -0.04em; }
+    .hero .eyebrow { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--agora-or); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .hero .eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--agora-or); }
+    .hero h1 { font-size: clamp(38px, 5.5vw, 72px); font-weight: 900; color: var(--agora-blanc); line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em; }
+    .hero h1 em { font-style: italic; color: var(--agora-or); }
+    .hero p { font-size: 17px; line-height: 1.8; color: var(--agora-gris-clair); max-width: 480px; margin-bottom: 40px; font-weight: 300; }
+    .hero .btn-get-started { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--agora-or); color: var(--agora-noir); padding: 16px 36px; border-radius: 0; text-decoration: none; transition: all 0.3s; display: inline-block; }
+    .hero .btn-get-started:hover { background: var(--agora-blanc); color: var(--agora-noir); transform: translateY(-2px); }
+    .hero .btn-watch-video { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--agora-gris-clair) !important; text-decoration: none; margin-left: 28px; display: flex; align-items: center; gap: 10px; transition: color 0.3s; }
+    .hero .btn-watch-video:hover { color: var(--agora-or) !important; }
+    .hero .btn-watch-video i { font-size: 22px; }
+    .hero-stats-row { display: flex; gap: 48px; margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .hero-stat-num { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--agora-or); line-height: 1; }
+    .hero-stat-label { font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--agora-gris-clair); margin-top: 6px; }
+
+    /* FEATURED SERVICES BAND */
+    #featured-services { background: var(--agora-or) !important; padding: 48px 0 !important; }
+    #featured-services .service-item { background: transparent !important; border: none !important; box-shadow: none !important; padding: 20px 32px !important; border-right: 1px solid rgba(0,0,0,0.15); }
+    #featured-services .service-item:last-child { border-right: none; }
+    #featured-services .service-item .icon i { color: var(--agora-noir) !important; font-size: 28px; }
+    #featured-services .service-item h4 a { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--agora-noir) !important; text-decoration: none; }
+    #featured-services .service-item p { font-size: 13px; color: rgba(0,0,0,0.65) !important; margin: 0; line-height: 1.6; }
+
+    /* SECTION TITLES */
+    .section-title h2 { font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--agora-or); margin-bottom: 10px; }
+    .section-title p { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; color: var(--agora-noir); line-height: 1.2; }
+    .section-title p .description-title { color: var(--agora-noir); font-style: italic; }
+    .section-title p span:first-child { color: var(--agora-gris); font-style: normal; font-weight: 400; }
+
+    /* ABOUT */
+    #about { background: var(--agora-creme) !important; }
+    #about .about-content h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: var(--agora-noir); line-height: 1.3; margin-bottom: 18px; }
+    #about .about-content p.fst-italic { font-size: 16px; font-style: italic !important; color: var(--agora-gris); border-left: 3px solid var(--agora-or); padding-left: 18px; margin-bottom: 24px; }
+    #about .about-content ul { list-style: none; padding: 0; margin: 0 0 24px; }
+    #about .about-content ul li { display: flex; gap: 16px; margin-bottom: 20px; }
+    #about .about-content ul li i { font-size: 22px; color: var(--agora-or); flex-shrink: 0; margin-top: 2px; }
+    #about .about-content ul li h4 { font-size: 15px; font-weight: 700; font-family: var(--font-ui); margin-bottom: 4px; color: var(--agora-noir); }
+    #about .about-content ul li p { font-size: 13px; color: var(--agora-gris); margin: 0; }
+
+    /* SKILLS */
+    #skills { background: var(--agora-blanc) !important; }
+    #skills .skill span { font-family: var(--font-ui); font-weight: 600; font-size: 13px; letter-spacing: 0.04em; color: var(--agora-noir); }
+    #skills .skill .val { color: var(--agora-or); }
+    #skills .progress-bar { background: var(--agora-or) !important; }
+
+    /* STATS */
+    #stats { background: var(--agora-noir) !important; }
+    #stats i { color: var(--agora-or) !important; font-size: 32px; }
+    #stats .stats-item span { color: var(--agora-blanc) !important; font-family: var(--font-display); font-size: 48px; font-weight: 700; }
+    #stats .stats-item p { color: var(--agora-gris-clair) !important; font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* CLIENTS */
+    #clients { background: var(--agora-creme) !important; }
+
+    /* SERVICES */
+    #services { background: var(--agora-blanc) !important; }
+    #services .service-item { border: 1px solid var(--agora-gris-clair) !important; border-radius: 0 !important; padding: 32px !important; transition: all 0.3s !important; background: white !important; }
+    #services .service-item:hover { border-color: var(--agora-or) !important; transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08) !important; }
+    #services .service-item .icon i { color: var(--agora-or) !important; font-size: 32px; }
+    #services .service-item h3 { font-size: 18px; font-weight: 700; color: var(--agora-noir); margin: 16px 0 10px; }
+    #services .service-item h3 a { color: inherit !important; text-decoration: none; }
+    #services .service-item p { font-size: 14px; color: var(--agora-gris); line-height: 1.7; }
+
+    /* TESTIMONIALS */
+    #testimonials { background: var(--agora-noir) !important; }
+    #testimonials .testimonial-item h3 { color: var(--agora-or) !important; font-size: 18px; }
+    #testimonials .testimonial-item h4 { color: var(--agora-gris-clair) !important; }
+    #testimonials .testimonial-item .stars i { color: var(--agora-or) !important; }
+
+    /* PORTFOLIO */
+    #portfolio { background: var(--agora-blanc) !important; }
+    .portfolio-filters li { font-family: var(--font-ui) !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; }
+    .portfolio-filters li.filter-active { background: var(--agora-or) !important; color: var(--agora-noir) !important; border-color: var(--agora-or) !important; }
+
+    /* TEAM */
+    #team { background: var(--agora-creme) !important; }
+    #team .team-member { background: white !important; border-radius: 0 !important; }
+    #team .member-info h4 { font-size: 17px; font-weight: 700; color: var(--agora-noir); }
+    #team .member-info span { font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.08em; color: var(--agora-or); text-transform: uppercase; }
+    #team .social a { background: var(--agora-or) !important; border-radius: 0 !important; }
+    #team .social a:hover { background: var(--agora-noir) !important; }
+
+    /* PRICING */
+    #pricing { background: var(--agora-blanc) !important; }
+    .pricing-item { border: 1px solid var(--agora-gris-clair) !important; border-radius: 0 !important; }
+    .pricing-item.featured { background: var(--agora-noir) !important; }
+    .pricing-item.featured h3 { color: var(--agora-or) !important; }
+    .pricing-item.featured h4, .pricing-item.featured li { color: var(--agora-blanc) !important; }
+    .btn-buy { font-family: var(--font-ui) !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; background: var(--agora-or) !important; color: var(--agora-noir) !important; border-radius: 0 !important; border: none !important; padding: 12px 28px !important; }
+
+    /* FAQ */
+    #faq { background: var(--agora-creme) !important; }
+    .faq-item h3 { font-family: var(--font-display); font-size: 17px; color: var(--agora-noir); }
+    .faq-item.faq-active h3 { color: var(--agora-or); }
+
+    /* CONTACT */
+    #contact { background: var(--agora-blanc) !important; }
+    #contact .info-item h3 { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--agora-or); }
+    #contact .info-item p { color: var(--agora-gris); font-size: 14px; }
+    #contact .info-item i { color: var(--agora-or) !important; }
+    #contact .php-email-form input, #contact .php-email-form textarea { border: 1px solid var(--agora-gris-clair) !important; border-radius: 0 !important; font-family: var(--font-body) !important; font-size: 14px !important; background: white !important; transition: border-color 0.3s; }
+    #contact .php-email-form input:focus, #contact .php-email-form textarea:focus { border-color: var(--agora-or) !important; box-shadow: none !important; outline: none !important; }
+    #contact .php-email-form button { font-family: var(--font-ui) !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; background: var(--agora-or) !important; color: var(--agora-noir) !important; border-radius: 0 !important; border: none !important; padding: 14px 40px !important; transition: all 0.3s !important; }
+    #contact .php-email-form button:hover { background: var(--agora-noir) !important; color: var(--agora-or) !important; }
+    #contact label { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--agora-gris); }
+
+    /* FOOTER */
+    .footer { background: var(--agora-noir) !important; color: var(--agora-gris-clair) !important; }
+    .footer .footer-newsletter { background: #181818 !important; }
+    .footer .footer-newsletter h4 { font-family: var(--font-display); font-size: 22px; color: var(--agora-blanc); }
+    .footer .footer-newsletter p { color: var(--agora-gris-clair); font-size: 14px; }
+    .footer .footer-newsletter .newsletter-form input[type="email"] { border: 1px solid rgba(255,255,255,0.15) !important; background: transparent !important; color: var(--agora-blanc) !important; font-family: var(--font-body) !important; border-radius: 0 !important; }
+    .footer .footer-newsletter .newsletter-form input[type="submit"] { background: var(--agora-or) !important; color: var(--agora-noir) !important; font-family: var(--font-ui) !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; border-radius: 0 !important; }
+    .footer .sitename { color: var(--agora-blanc) !important; font-family: var(--font-display); font-size: 22px; font-weight: 900; }
+    .footer .footer-contact p, .footer .footer-contact strong { color: var(--agora-gris-clair) !important; font-size: 14px; }
+    .footer h4 { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--agora-or); }
+    .footer .footer-links li a { color: var(--agora-gris-clair) !important; font-size: 14px; text-decoration: none; transition: color 0.3s; }
+    .footer .footer-links li a:hover { color: var(--agora-or) !important; }
+    .footer .footer-links li i { color: var(--agora-or) !important; }
+    .footer .social-links a { background: rgba(255,255,255,0.08) !important; border-radius: 0 !important; color: var(--agora-gris-clair) !important; transition: all 0.3s !important; }
+    .footer .social-links a:hover { background: var(--agora-or) !important; color: var(--agora-noir) !important; }
+    .footer .copyright p { color: var(--agora-gris-clair); font-size: 13px; }
+    .footer .credits a { color: var(--agora-or); }
+
+    .scroll-top { background: var(--agora-or) !important; color: var(--agora-noir) !important; border-radius: 0 !important; }
+  </style>
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header sticky-top">
-
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@agora-communication.fr">contact@agora-communication.fr</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+33 1 42 00 00 00</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
@@ -53,1016 +204,688 @@
           <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-    </div><!-- End Top Bar -->
+    </div>
 
-    <div class="branding d-flex align-items-cente">
-
+    <div class="branding d-flex align-items-center">
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">BizLand</h1>
+        <a href="#hero" class="logo d-flex align-items-center">
+          <h1 class="sitename">Agora<span>.</span></h1>
         </a>
-
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#hero" class="active">Accueil</a></li>
+            <li><a href="#about">Agence</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Team</a></li>
-            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li>
+            <li><a href="#portfolio">Réalisations</a></li>
+            <li><a href="#team">Équipe</a></li>
+            <li><a href="#pricing">Offres</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-
       </div>
-
     </div>
-
   </header>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-
+    <section id="hero" class="hero section">
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>Welcome to <span>BizLand</span></h1>
-            <p>We are team of talented designers making websites with Bootstrap</p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Get Started</a>
-              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+        <div class="row gy-4 align-items-center" style="min-height: 88vh;">
+          <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+            <div class="eyebrow">Agence de communication &amp; stratégie</div>
+            <h1>Votre marque,<br><em>amplifiée.</em></h1>
+            <p>Nous construisons des stratégies de communication qui créent de la résonance — entre votre vision et vos audiences, entre votre identité et le marché.</p>
+            <div class="d-flex align-items-center flex-wrap gap-3">
+              <a href="#services" class="btn-get-started">Découvrir nos services</a>
+              <a href="#portfolio" class="btn-watch-video">
+                <i class="bi bi-arrow-right-circle"></i>
+                <span>Voir nos réalisations</span>
+              </a>
+            </div>
+            <div class="hero-stats-row">
+              <div>
+                <div class="hero-stat-num">12+</div>
+                <div class="hero-stat-label">Années d'expertise</div>
+              </div>
+              <div>
+                <div class="hero-stat-num">180</div>
+                <div class="hero-stat-label">Clients accompagnés</div>
+              </div>
+              <div>
+                <div class="hero-stat-num">4</div>
+                <div class="hero-stat-label">Prix remportés</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2 d-flex align-items-center justify-content-end" data-aos="fade-left" data-aos-delay="200">
+            <div style="position:relative; height: 460px; width: 100%;">
+              <div style="position:absolute;top:0;right:0;width:340px;height:400px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);"></div>
+              <div style="position:absolute;top:30px;right:30px;width:340px;height:400px;border:1px solid rgba(255,255,255,0.05);"></div>
+              <div style="position:absolute;top:56px;right:16px;width:290px;height:260px;background:rgba(201,168,76,0.04);display:flex;align-items:center;justify-content:center;padding:32px;">
+                <div style="text-align:center;">
+                  <div style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:16px;">Notre philosophie</div>
+                  <div style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#f7f4ef;line-height:1.6;">"Communiquer,<br>c'est créer<br>du lien."</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </section><!-- /Hero Section -->
-
-    <!-- Featured Services Section -->
+    <!-- Featured Services Band -->
     <section id="featured-services" class="featured-services section">
-
       <div class="container">
-
-        <div class="row gy-4">
-
+        <div class="row gy-0">
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="bi bi-bullseye icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Stratégie de marque</a></h4>
+              <p>Positionnement, identité, architecture de marque cohérente.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-              <h4><a href="" class="stretched-link">Sed ut perspici</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="bi bi-pencil-square icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Création de contenu</a></h4>
+              <p>Rédaction, direction artistique, production visuelle &amp; vidéo.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-              <h4><a href="" class="stretched-link">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="bi bi-graph-up-arrow icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Communication digitale</a></h4>
+              <p>Social media, SEO, campagnes digitales et analytics.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-              <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="bi bi-newspaper icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Relations presse</a></h4>
+              <p>Relations médias, attachés de presse, gestion de crise.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Featured Services Section -->
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about section light-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p><span>Find Out More</span> <span class="description-title">About Us</span></p>
-      </div><!-- End Section Title -->
-
+        <h2>Notre agence</h2>
+        <p><span>En savoir plus</span> <span class="description-title">Sur nous</span></p>
+      </div>
       <div class="container">
-
         <div class="row gy-3">
-
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" alt="" class="img-fluid">
+            <img src="assets/img/about.jpg" alt="L'équipe Agora Communication" class="img-fluid">
           </div>
-
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="about-content ps-0 ps-lg-3">
-              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+              <h3>Une agence indépendante à votre service depuis 2012</h3>
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+                Fondée avec l'ambition de redonner du sens à la communication, Agora accompagne marques, institutions et entrepreneurs dans la construction d'une parole forte et cohérente.
               </p>
               <ul>
                 <li>
                   <i class="bi bi-diagram-3"></i>
                   <div>
-                    <h4>Ullamco laboris nisi ut aliquip consequat</h4>
-                    <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+                    <h4>Approche stratégique intégrée</h4>
+                    <p>Nous construisons votre communication de A à Z : positionnement, messages clés, plans d'action et suivi de performance.</p>
                   </div>
                 </li>
                 <li>
-                  <i class="bi bi-fullscreen-exit"></i>
+                  <i class="bi bi-palette"></i>
                   <div>
-                    <h4>Magnam soluta odio exercitationem reprehenderi</h4>
-                    <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+                    <h4>Créativité au service des résultats</h4>
+                    <p>Nos équipes créatives et stratégiques travaillent en tandem pour produire des campagnes qui marquent les esprits et atteignent leurs objectifs.</p>
                   </div>
                 </li>
               </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
-              </p>
+              <p>Chaque projet est une collaboration. Nous nous immergeons dans votre univers pour comprendre vos enjeux, vos audiences et vos ambitions — et concevoir des réponses sur mesure.</p>
             </div>
-
           </div>
         </div>
-
       </div>
-
-    </section><!-- /About Section -->
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
+        <div class="container section-title mb-5" data-aos="fade-up">
+          <h2>Expertise</h2>
+          <p><span>Nos domaines</span> <span class="description-title">de compétence</span></p>
         </div>
-
+        <div class="row skills-content skills-animation">
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>Stratégie de marque</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Direction artistique</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Réseaux sociaux</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>Relations presse</span> <i class="val">88%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Production de contenu</span> <i class="val">92%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Gestion de crise</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </section><!-- /Skills Section -->
+    </section>
 
     <!-- Stats Section -->
     <section id="stats" class="stats section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-emoji-smile"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
+              <span data-purecounter-start="0" data-purecounter-end="180" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients satisfaits</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-journal-richtext"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
+              <span data-purecounter-start="0" data-purecounter-end="340" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Campagnes réalisées</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-headset"></i>
+            <i class="bi bi-trophy"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
+              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Prix Effie remportés</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-people"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hard Workers</p>
+              <span data-purecounter-start="0" data-purecounter-end="22" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Collaborateurs experts</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Stats Section -->
+    </section>
 
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">
-
       <div class="container">
-
+        <div class="container section-title mb-4" data-aos="fade-up">
+          <h2>Ils nous font confiance</h2>
+          <p><span>Nos</span> <span class="description-title">Clients</span></p>
+        </div>
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
+            { "loop": true, "speed": 600, "autoplay": { "delay": 5000 }, "slidesPerView": "auto", "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }, "breakpoints": { "320": { "slidesPerView": 2, "spaceBetween": 40 }, "480": { "slidesPerView": 3, "spaceBetween": 60 }, "640": { "slidesPerView": 4, "spaceBetween": 80 }, "992": { "slidesPerView": 6, "spaceBetween": 120 } } }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt="Client 1"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt="Client 2"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt="Client 3"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt="Client 4"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt="Client 5"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt="Client 6"></div>
           </div>
         </div>
-
       </div>
-
-    </section><!-- /Clients Section -->
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="services section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p><span>Check Our</span> <span class="description-title">Services</span></p>
-      </div><!-- End Section Title -->
-
+        <h2>Ce que nous faisons</h2>
+        <p><span>Découvrez</span> <span class="description-title">nos services</span></p>
+      </div>
       <div class="container">
-
         <div class="row gy-4">
-
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
-              </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <div class="icon"><i class="bi bi-bullseye"></i></div>
+              <a href="#" class="stretched-link"><h3>Stratégie de communication</h3></a>
+              <p>Audit de marque, plateforme de communication, définition des messages clés et plans d'action sur mesure pour atteindre vos objectifs.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <div class="icon"><i class="bi bi-palette2"></i></div>
+              <a href="#" class="stretched-link"><h3>Identité &amp; Branding</h3></a>
+              <p>Création ou refonte d'identité visuelle, charte graphique, design système et guidelines pour une marque forte et cohérente.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <div class="icon"><i class="bi bi-camera-video"></i></div>
+              <a href="#" class="stretched-link"><h3>Production de contenu</h3></a>
+              <p>Rédaction éditoriale, photographie, production vidéo, motion design et podcasts — du contenu qui engage et convertit.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="#" class="stretched-link"></a>
+              <div class="icon"><i class="bi bi-phone"></i></div>
+              <a href="#" class="stretched-link"><h3>Social Media &amp; Digital</h3></a>
+              <p>Gestion de communautés, stratégie de contenu social, publicité digitale (Meta Ads, Google Ads) et reporting analytique.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="#" class="stretched-link"></a>
+              <div class="icon"><i class="bi bi-newspaper"></i></div>
+              <a href="#" class="stretched-link"><h3>Relations presse &amp; médias</h3></a>
+              <p>Rédaction de communiqués, relations journalistes, organisation d'événements presse et gestion de la visibilité médiatique.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="#" class="stretched-link"></a>
+              <div class="icon"><i class="bi bi-shield-check"></i></div>
+              <a href="#" class="stretched-link"><h3>Communication de crise</h3></a>
+              <p>Anticipation des risques, cellule de crise, messages de réponse et accompagnement sur la durée pour protéger votre réputation.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Services Section -->
+    </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section dark-background">
-
       <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
+            { "loop": true, "speed": 600, "autoplay": { "delay": 5000 }, "slidesPerView": "auto", "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true } }
           </script>
           <div class="swiper-wrapper">
-
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <h3>Isabelle Moreau</h3>
+                <h4>Directrice Marketing, Groupe Lumière</h4>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p><i class="bi bi-quote quote-icon-left"></i><span>Agora a su traduire notre ADN de marque en un langage visuel et éditorial qui nous ressemble vraiment. Une équipe à l'écoute, créative et rigoureuse. Nous travaillons ensemble depuis 4 ans maintenant.</span><i class="bi bi-quote quote-icon-right"></i></p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <h3>Thomas Archambault</h3>
+                <h4>Fondateur, Maison Cléa</h4>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p><i class="bi bi-quote quote-icon-left"></i><span>Le lancement de notre marque avec Agora a dépassé toutes nos espérances. Leur capacité à créer une identité forte dès le départ nous a donné une longueur d'avance significative sur notre marché.</span><i class="bi bi-quote quote-icon-right"></i></p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <h3>Sophie Delacroix</h3>
+                <h4>DG Communication, Fédération Nationale du Sport</h4>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p><i class="bi bi-quote quote-icon-left"></i><span>La gestion de notre crise de communication a été exemplaire. Agora a été réactif, professionnel et nous a guidés à travers une période difficile avec une sérénité rassurante.</span><i class="bi bi-quote quote-icon-right"></i></p>
               </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
+            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
       </div>
-
-    </section><!-- /Testimonials Section -->
+    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p><span>Check Our&nbsp;</span> <span class="description-title">Portfolio</span></p>
-      </div><!-- End Section Title -->
-
+        <h2>Nos réalisations</h2>
+        <p><span>Découvrez notre</span> <span class="description-title">Portfolio</span></p>
+      </div>
       <div class="container">
-
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li>
-          </ul><!-- End Portfolio Filters -->
-
+            <li data-filter="*" class="filter-active">Tout</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-campagne">Campagnes</li>
+            <li data-filter=".filter-digital">Digital</li>
+          </ul>
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Refonte — Maison Solis</h4>
+                <p>Branding &amp; Identité visuelle</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="Maison Solis" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="Voir le projet" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-campagne">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Campagne — Éco-mobilité</h4>
+                <p>Communication institutionnelle</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Éco-mobilité" data-gallery="portfolio-gallery-campagne" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="Voir le projet" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Social Media — Atelier Pivoine</h4>
+                <p>Stratégie digitale &amp; contenu</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Atelier Pivoine" data-gallery="portfolio-gallery-digital" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="Voir le projet" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Branding — Clinique du Futur</h4>
+                <p>Identité de marque médicale</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="Clinique du Futur" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="Voir le projet" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-campagne">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Lancement — Cuvée Exception</h4>
+                <p>Relations presse &amp; événement</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Cuvée Exception" data-gallery="portfolio-gallery-campagne" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="Voir le projet" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Campagne digitale — TechParis</h4>
+                <p>Acquisition &amp; brand awareness</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="TechParis" data-gallery="portfolio-gallery-digital" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="Voir le projet" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
+            </div>
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Portfolio Section -->
+    </section>
 
     <!-- Team Section -->
     <section id="team" class="team section light-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p><span>Our Hardworking</span> <span class="description-title">Team</span></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
+        <h2>Notre équipe</h2>
+        <p><span>Les talents</span> <span class="description-title">derrière Agora</span></p>
       </div>
-
-    </section><!-- /Team Section -->
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member w-100">
+              <div class="member-img">
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Claire Fontaine">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Claire Fontaine</h4>
+                <span>Directrice Générale &amp; Fondatrice</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member w-100">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Martin Leroy">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Martin Leroy</h4>
+                <span>Directeur de la Stratégie</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member w-100">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="Nadia Bensalem">
+                <div class="social">
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Nadia Bensalem</h4>
+                <span>Directrice Artistique</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member w-100">
+              <div class="member-img">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="Paul Girard">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Paul Girard</h4>
+                <span>Responsable Digital &amp; Data</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p><span>Check our</span> <span class="description-title">Pricing</span></p>
-      </div><!-- End Section Title -->
-
+        <h2>Nos offres</h2>
+        <p><span>Choisissez</span> <span class="description-title">votre formule</span></p>
+      </div>
       <div class="container">
-
         <div class="row gy-3">
-
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="pricing-item">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
+              <h3>Essentiel</h3>
+              <h4><sup>€</sup>890<span> / mois</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>Audit de marque initial</li>
+                <li>Plateforme de marque</li>
+                <li>4 contenus / mois</li>
+                <li class="na">Gestion réseaux sociaux</li>
+                <li class="na">Relations presse</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
+              <div class="btn-wrap"><a href="#contact" class="btn-buy">Nous contacter</a></div>
             </div>
-          </div><!-- End Pricing Item -->
-
+          </div>
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="pricing-item featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
+              <h3>Croissance</h3>
+              <h4><sup>€</sup>1 890<span> / mois</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>Stratégie complète</li>
+                <li>Identité visuelle</li>
+                <li>12 contenus / mois</li>
+                <li>Community management</li>
+                <li class="na">Relations presse</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
+              <div class="btn-wrap"><a href="#contact" class="btn-buy">Nous contacter</a></div>
             </div>
-          </div><!-- End Pricing Item -->
-
+          </div>
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-item">
+              <h3>Accélération</h3>
+              <h4><sup>€</sup>3 490<span> / mois</span></h4>
+              <ul>
+                <li>Stratégie 360°</li>
+                <li>Branding complet</li>
+                <li>Contenus illimités</li>
+                <li>Social media full</li>
+                <li>Relations presse incluses</li>
+              </ul>
+              <div class="btn-wrap"><a href="#contact" class="btn-buy">Nous contacter</a></div>
+            </div>
+          </div>
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="pricing-item">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
+              <span class="advanced">Sur mesure</span>
+              <h3>Entreprise</h3>
+              <h4>Sur devis</h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>Accompagnement dédié</li>
+                <li>Équipe dédiée</li>
+                <li>Projets complexes</li>
+                <li>Gestion de crise</li>
+                <li>Reporting executive</li>
               </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
+              <div class="btn-wrap"><a href="#contact" class="btn-buy">Discutons-en</a></div>
             </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="pricing-item">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
+          </div>
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
+    <!-- FAQ Section -->
     <section id="faq" class="faq section light-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>F.A.Q</h2>
-        <p><span>Frequently Asked</span> <span class="description-title">Questions</span></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row justify-content-center">
-
-          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="faq-container">
-
-              <div class="faq-item faq-active">
-                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
-                <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
-                <div class="faq-content">
-                  <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-            </div>
-
-          </div><!-- End Faq Column-->
-
-        </div>
-
+        <h2>Questions fréquentes</h2>
+        <p><span>Vous avez des</span> <span class="description-title">Questions ?</span></p>
       </div>
-
-    </section><!-- /Faq Section -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3>Comment se déroule un premier accompagnement avec Agora ?</h3>
+                <div class="faq-content"><p>Nous commençons toujours par une phase d'immersion : entretiens avec vos équipes, audit de votre communication existante et analyse de votre marché. Cette phase nous permet de vous proposer une stratégie vraiment sur mesure. Un premier rendez-vous découverte gratuit est proposé à tous nos prospects.</p></div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3>Travaillez-vous avec des entreprises de toutes tailles ?</h3>
+                <div class="faq-content"><p>Oui. Nous accompagnons aussi bien des TPE et startups que des grands groupes et institutions publiques. Nos offres sont adaptées à chaque profil, et nous sommes particulièrement attentifs aux contraintes budgétaires des structures en croissance.</p></div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3>Quelle est la durée minimale d'engagement ?</h3>
+                <div class="faq-content"><p>Pour nos offres de retainer (mensuel), nous recommandons un engagement minimum de 3 mois pour permettre à la stratégie de produire des effets mesurables. Pour les projets ponctuels (branding, campagnes), des missions à la carte sont possibles sans engagement de durée.</p></div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3>Proposez-vous des services de communication de crise ?</h3>
+                <div class="faq-content"><p>Absolument. Nous disposons d'une cellule de crise disponible 7j/7 pour nos clients en contrat actif. Pour les situations d'urgence ponctuelles, nous proposons également des interventions spécifiques avec prise en charge sous 24 heures.</p></div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3>Comment mesurez-vous les résultats de vos actions ?</h3>
+                <div class="faq-content"><p>Chaque mission est accompagnée d'un tableau de bord personnalisé avec des KPIs définis ensemble en amont. Nous livrons des rapports mensuels détaillés et organisons des points de revue réguliers pour ajuster la stratégie en temps réel.</p></div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
-      </div><!-- End Section Title -->
-
+        <p><span>Parlons de</span> <span class="description-title">votre projet</span></p>
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-5">
-
             <div class="info-wrap">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <h3>Adresse</h3>
+                  <p>14 rue du Faubourg Saint-Antoine, 75012 Paris</p>
                 </div>
-              </div><!-- End Info Item -->
-
+              </div>
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
+                  <h3>Téléphone</h3>
+                  <p>+33 1 42 00 00 00</p>
                 </div>
-              </div><!-- End Info Item -->
-
+              </div>
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <h3>Email</h3>
+                  <p>contact@agora-communication.fr</p>
                 </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.499!2d2.370!3d48.853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzEwLjgiTiAyQzIyJzEzLjIiRQ!5e0!3m2!1sfr!2sfr!4v1" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
-
           <div class="col-lg-7">
             <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
-
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
+                  <label for="name-field" class="pb-2">Votre nom</label>
                   <input type="text" name="name" id="name-field" class="form-control" required="">
                 </div>
-
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
+                  <label for="email-field" class="pb-2">Votre email</label>
                   <input type="email" class="form-control" name="email" id="email-field" required="">
                 </div>
-
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
+                  <label for="subject-field" class="pb-2">Sujet</label>
                   <input type="text" class="form-control" name="subject" id="subject-field" required="">
                 </div>
-
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label for="message-field" class="pb-2">Votre message</label>
+                  <textarea class="form-control" name="message" rows="8" id="message-field" required="" placeholder="Décrivez votre projet, vos besoins, votre budget approximatif..."></textarea>
                 </div>
-
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
+                  <div class="loading">Envoi en cours...</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+                  <div class="sent-message">Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
+                  <button type="submit">Envoyer le message</button>
                 </div>
-
               </div>
             </form>
-          </div><!-- End Contact Form -->
-
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Contact Section -->
+    </section>
 
   </main>
 
   <footer id="footer" class="footer">
-
     <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <h4>Restez informés</h4>
+            <p>Abonnez-vous à notre lettre mensuelle : actualités communication, tendances créatives et retours d'expérience de terrain.</p>
             <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
+              <div class="newsletter-form">
+                <input type="email" name="email" placeholder="votre@email.fr">
+                <input type="submit" value="S'abonner">
+              </div>
+              <div class="loading">Chargement...</div>
               <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+              <div class="sent-message">Inscription confirmée. À bientôt dans votre boîte mail !</div>
             </form>
           </div>
         </div>
@@ -1072,40 +895,39 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">BizLand</span>
+          <a href="#hero" class="d-flex align-items-center">
+            <span class="sitename">Agora.</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>14 rue du Faubourg Saint-Antoine</p>
+            <p>75012 Paris, France</p>
+            <p class="mt-3"><strong>Tél :</strong> <span>+33 1 42 00 00 00</span></p>
+            <p><strong>Email :</strong> <span>contact@agora-communication.fr</span></p>
           </div>
         </div>
-
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Navigation</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Accueil</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">L'agence</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Réalisations</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact</a></li>
           </ul>
         </div>
-
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Nos services</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Stratégie de marque</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Branding &amp; Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Social Media</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Relations presse</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Gestion de crise</a></li>
           </ul>
         </div>
-
         <div class="col-lg-4 col-md-12">
-          <h4>Follow Us</h4>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+          <h4>Suivez-nous</h4>
+          <p>Découvrez nos coulisses, nos projets en cours et nos réflexions sur la communication d'aujourd'hui.</p>
           <div class="social-links d-flex">
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
@@ -1113,33 +935,17 @@
             <a href=""><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">BizLand</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
-      </div>
+      <p>© <span>2025</span> <strong class="px-1 sitename">Agora Communication</strong> — <span>Tous droits réservés</span></p>
+      <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <div id="preloader"><div></div><div></div><div></div><div></div></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1151,10 +957,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
