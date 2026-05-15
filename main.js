@@ -130,3 +130,28 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     }
   });
 });
+
+// DARK MODE TOGGLE
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+function applyTheme(dark) {
+  html.setAttribute('data-theme', dark ? 'dark' : '');
+  themeToggle.textContent = dark ? '☀️' : '🌙';
+  themeToggle.setAttribute('aria-label', dark ? 'Passer en mode clair' : 'Passer en mode sombre');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+
+// Lire la préférence sauvegardée, sinon détecter le système
+const saved = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(saved ? saved === 'dark' : prefersDark);
+
+themeToggle.addEventListener('click', () => {
+  applyTheme(html.getAttribute('data-theme') !== 'dark');
+});
+
+// Suivre les changements système si pas de préférence sauvegardée
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if (!localStorage.getItem('theme')) applyTheme(e.matches);
+});
