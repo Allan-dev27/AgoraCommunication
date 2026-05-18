@@ -5,10 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agora Communication — L'agence qui donne la parole</title>
 <meta name="description" content="Agora Communication accompagne les associations, collectivités et TPE de Normandie dans leurs projets de communication : stratégie, identité visuelle, digital, événementiel.">
+<link rel="canonical" href="https://agora-communication.fr/">
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://agora-communication.fr/">
+<meta property="og:title"       content="Agora Communication — L'agence qui donne la parole">
+<meta property="og:description" content="Agora Communication accompagne les associations, collectivités et TPE de Normandie dans leurs projets de communication.">
+<meta property="og:image"       content="https://agora-communication.fr/og-image.jpg">
+<meta name="twitter:card"       content="summary_large_image">
+<!-- Thème couleur navigateur mobile -->
+<meta name="theme-color" content="#3C3489" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0c1a" media="(prefers-color-scheme: dark)">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- BARRE DE PROGRESSION AU SCROLL -->
+<div id="scrollProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progression de lecture"></div>
 
 <!-- NAV -->
 <nav>
@@ -48,6 +61,7 @@
   <a href="#portfolio">Réalisations</a>
   <a href="#faq">FAQ</a>
   <a href="#contact" class="mobile-cta">Nous contacter</a>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="Basculer le mode sombre" style="margin-top:1.5rem;">🌙</button>
 </nav>
 
 <!-- HERO -->
@@ -63,9 +77,9 @@
       <a href="#contact" class="btn-outline">Nous écrire</a>
     </div>
     <div class="hero-stats">
-      <div><div class="hero-stat-num">120+</div><div class="hero-stat-label">Projets réalisés</div></div>
-      <div><div class="hero-stat-num">8</div><div class="hero-stat-label">Années d'existence</div></div>
-      <div><div class="hero-stat-num">40+</div><div class="hero-stat-label">Partenaires actifs</div></div>
+      <div><div class="hero-stat-num counter" data-target="120">0</div><div class="hero-stat-label">Projets réalisés</div></div>
+      <div><div class="hero-stat-num counter" data-target="8">0</div><div class="hero-stat-label">Années d'existence</div></div>
+      <div><div class="hero-stat-num counter" data-target="40">0</div><div class="hero-stat-label">Partenaires actifs</div></div>
     </div>
   </div>
   <div class="hero-right">
@@ -345,6 +359,21 @@
   </div>
 </section>
 
+<!-- CLIENTS LOGOS STRIP -->
+<section id="clients" aria-label="Ils nous font confiance">
+  <div class="clients-strip reveal">
+    <div class="clients-label">Ils nous ont fait confiance</div>
+    <div class="clients-logos">
+      <span class="client-logo">MJC Conches</span>
+      <span class="client-logo">Ville d'Évreux</span>
+      <span class="client-logo">Eure en Transition</span>
+      <span class="client-logo">FNAB Normandie</span>
+      <span class="client-logo">SCIC Les Communs</span>
+      <span class="client-logo">Normandie Impressionniste</span>
+    </div>
+  </div>
+</section>
+
 <!-- ÉQUIPE -->
 <section id="equipe">
   <div class="section-tag reveal">Les visages d'Agora</div>
@@ -513,10 +542,19 @@
       <div class="footer-brand-name">Agora Communication</div>
       <p class="footer-brand-desc">Association loi 1901 dédiée à la communication au service du collectif et des territoires.</p>
       <div class="footer-social">
-        <a href="#" title="LinkedIn">in</a>
-        <a href="#" title="Facebook">f</a>
-        <a href="#" title="Instagram">ig</a>
-        <a href="#" title="Twitter/X">𝕏</a>
+        <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+        <a href="#" title="Facebook" aria-label="Facebook">f</a>
+        <a href="#" title="Instagram" aria-label="Instagram">ig</a>
+        <a href="#" title="Twitter/X" aria-label="Twitter / X">𝕏</a>
+      </div>
+      <!-- NEWSLETTER -->
+      <div class="footer-newsletter">
+        <p class="footer-newsletter-label">Notre newsletter mensuelle</p>
+        <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+          <input type="email" placeholder="votre@email.fr" aria-label="Votre adresse email" required>
+          <button type="submit" aria-label="S'abonner">→</button>
+        </form>
+        <p class="footer-newsletter-note" id="newsletterStatus"></p>
       </div>
     </div>
     <div class="footer-col">

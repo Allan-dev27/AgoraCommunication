@@ -1,13 +1,34 @@
-// NAV SCROLL HIGHLIGHT
-const sections = document.querySelectorAll('section[id]');
+// ============================================================
+// SCROLL PROGRESS BAR
+// ============================================================
+const scrollProgress = document.getElementById('scrollProgress');
+function updateProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = pct + '%';
+  scrollProgress.setAttribute('aria-valuenow', Math.round(pct));
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+// ============================================================
+// NAV SCROLL HIGHLIGHT + SHADOW ON SCROLL
+// ============================================================
+const sections  = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-links a');
+const mainNav   = document.querySelector('nav:not(.mobile-menu)');
+
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
   navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  // Ombre nav au scroll
+  mainNav.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
+// ============================================================
 // BURGER MENU
+// ============================================================
 const burgerBtn = document.getElementById('burgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 function toggleMenu(open) {
@@ -20,13 +41,55 @@ burgerBtn.addEventListener('click', () => toggleMenu(!mobileMenu.classList.conta
 mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
 
+// ============================================================
 // REVEAL ON SCROLL
+// ============================================================
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// FORMULAIRE FORMSPREE
+// ============================================================
+// COMPTEUR ANIMÉ (hero stats)
+// ============================================================
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '+';
+  const duration = 1800;
+  const step = 16;
+  const steps = Math.round(duration / step);
+  let current = 0;
+  const inc = target / steps;
+  const timer = setInterval(() => {
+    current += inc;
+    if (current >= target) {
+      el.textContent = target + suffix;
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(current) + (Math.floor(current) < target ? '' : suffix);
+    }
+  }, step);
+}
+// Observer les compteurs
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      // Vérifier prefers-reduced-motion
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        e.target.textContent = e.target.dataset.target + '+';
+      } else {
+        animateCounter(e.target);
+      }
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// ============================================================
+// FORMULAIRE CONTACT (Formspree)
+// ============================================================
 const form      = document.getElementById('contactForm');
 const submitBtn = document.getElementById('formSubmit');
 const statusEl  = document.getElementById('formStatus');
@@ -65,14 +128,47 @@ form.addEventListener('submit', async function(e) {
 
 function showStatus(type, msg) { statusEl.className = 'form-status ' + type; statusEl.textContent = msg; }
 
+// Réinitialiser la bordure rouge à la saisie
+form.querySelectorAll('[required]').forEach(f => {
+  f.addEventListener('input', () => { f.style.borderColor = ''; });
+});
+
+// ============================================================
+// FORMULAIRE NEWSLETTER (footer)
+// ============================================================
+const newsletterForm   = document.getElementById('newsletterForm');
+const newsletterStatus = document.getElementById('newsletterStatus');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const emailEl = newsletterForm.querySelector('input[type="email"]');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+      newsletterStatus.textContent = '⚠ Adresse email invalide.';
+      newsletterStatus.style.color = '#e07b5a';
+      return;
+    }
+    newsletterStatus.textContent = 'Envoi…';
+    newsletterStatus.style.color = 'rgba(255,255,255,0.45)';
+    // Ici connecter votre service (Mailchimp, Brevo…)
+    await new Promise(r => setTimeout(r, 800));
+    newsletterStatus.textContent = '✓ Inscription enregistrée !';
+    newsletterStatus.style.color = '#8BC34A';
+    newsletterForm.reset();
+  });
+}
+
+// ============================================================
 // BOUTON RETOUR EN HAUT
+// ============================================================
 const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
   backToTop.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// ============================================================
 // COOKIE BANNER
+// ============================================================
 const cookieBanner = document.getElementById('cookieBanner');
 const cookieAccept = document.getElementById('cookieAccept');
 const cookieRefuse = document.getElementById('cookieRefuse');
@@ -97,8 +193,10 @@ cookieRefuse.addEventListener('click', () => {
   hideCookie();
 });
 
+// ============================================================
 // FILTRES PORTFOLIO
-const filterBtns = document.querySelectorAll('.filter-btn');
+// ============================================================
+const filterBtns     = document.querySelectorAll('.filter-btn');
 const portfolioCards = document.querySelectorAll('.portfolio-card');
 
 filterBtns.forEach(btn => {
@@ -107,23 +205,27 @@ filterBtns.forEach(btn => {
     btn.classList.add('active');
     const filter = btn.dataset.filter;
     portfolioCards.forEach(card => {
-      const cats = card.dataset.cat || '';
+      const cats  = card.dataset.cat || '';
       const match = filter === 'all' || cats.includes(filter);
-      card.classList.toggle('hidden', !match);
+      if (match) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
     });
   });
 });
 
+// ============================================================
 // ACCORDÉON FAQ
+// ============================================================
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    // Fermer tous les autres
     document.querySelectorAll('.faq-question').forEach(b => {
       b.setAttribute('aria-expanded', 'false');
       b.nextElementSibling.classList.remove('open');
     });
-    // Ouvrir celui-ci si ce n'était pas déjà ouvert
     if (!isOpen) {
       btn.setAttribute('aria-expanded', 'true');
       btn.nextElementSibling.classList.add('open');
@@ -131,27 +233,37 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// DARK MODE TOGGLE
-const themeToggle = document.getElementById('themeToggle');
+// ============================================================
+// DARK MODE TOGGLE (bureau + mobile)
+// ============================================================
+const themeToggle       = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
 const html = document.documentElement;
 
 function applyTheme(dark) {
   html.setAttribute('data-theme', dark ? 'dark' : '');
-  themeToggle.textContent = dark ? '☀️' : '🌙';
-  themeToggle.setAttribute('aria-label', dark ? 'Passer en mode clair' : 'Passer en mode sombre');
+  const icon = dark ? '☀️' : '🌙';
+  const label = dark ? 'Passer en mode clair' : 'Passer en mode sombre';
+  [themeToggle, themeToggleMobile].forEach(btn => {
+    if (btn) { btn.textContent = icon; btn.setAttribute('aria-label', label); }
+  });
   localStorage.setItem('theme', dark ? 'dark' : 'light');
+  // Mettre à jour theme-color meta
+  document.querySelector('meta[name="theme-color"][media*="light"]')
+    ?.setAttribute('content', dark ? '#0d0c1a' : '#3C3489');
 }
 
-// Lire la préférence sauvegardée, sinon détecter le système
-const saved = localStorage.getItem('theme');
+const saved      = localStorage.getItem('theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 applyTheme(saved ? saved === 'dark' : prefersDark);
 
-themeToggle.addEventListener('click', () => {
-  applyTheme(html.getAttribute('data-theme') !== 'dark');
+[themeToggle, themeToggleMobile].forEach(btn => {
+  btn?.addEventListener('click', () => {
+    applyTheme(html.getAttribute('data-theme') !== 'dark');
+  });
 });
 
-// Suivre les changements système si pas de préférence sauvegardée
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
   if (!localStorage.getItem('theme')) applyTheme(e.matches);
 });
+
